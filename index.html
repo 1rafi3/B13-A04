@@ -57,221 +57,47 @@
 
         <hr class="text-[#E6E7E9] my-8">
 
-        <main>
+        <main id="main-container">
             <div class="mb-4">
-                <button onclick="btnController('all-filter-btn')" class="btn bg-[#3B82F6] text-white" id="all-filter-btn">All</button>
+                <button onclick="btnController('all-filter-btn')" class="btn bg-[#3B82F6] text-white hover:bg-[#3B82F6]" id="all-filter-btn">All</button>
                 <button onclick="btnController('interview-filter-btn')"  class=" btn hover:bg-[#3B82F6] " id="interview-filter-btn">Interview</button>
                 <button onclick="btnController('rejected-filter-btn')" class=" btn hover:bg-[#3B82F6] " id="rejected-filter-btn">Rejected</button>
             </div>
 
+            <!-- interviewd or rejected cards -->
+            <section id="filtered-section">
+
+            </section>
+
+
             <section id="cards" class="flex flex-col gap-4">
                 <div class="card bg-white p-6">
-                    <div class="left">
+                    <div>
                         <div class="flex justify-between">
                             <div class="mb-5">
-                                <h1 class="font-semibold text-[18px]">Mobile First Corp</h1>
-                                <p class="text-[#64748B] text-sm">React Native Developer</p>
+                                <h1 class="font-semibold job-name text-[18px]">Mobile First Corp</h1>
+                                <p class="text-[#64748B] job-title text-sm">React Native Developer</p>
                             </div>
-                            <div class="opacity-70 hover:opacity-100"><i class="fa-regular fa-trash-can"></i></div>
+                            <div class="opacity-70 btn-delete hover:opacity-100 hover:cursor-pointer"><i class="fa-regular fa-trash-can"></i></div>
                         </div>
-                        <p class="text-[#64748B] text-sm">Remote
+                        <p class="text-[#64748B] salary text-sm">Remote
                             •
                             Full-time
                             •
                             $130,000 - $175,000</p>
-                        <button class="btn mt-5 mb-2 text bg-[#EEF4FF]">Not Applied</button>
-                        <p class="text-sm text-[#323B49]">Build cross-platform mobile applications using React Native.
+                        <button class="btn mt-5 apply-verification-button mb-2 text bg-[#EEF4FF]">Not Applied</button>
+                        <p class="text-sm description text-[#323B49]">Build cross-platform mobile applications using React Native.
                             Work on products used by
                             millions of users worldwide.</p>
                         <div>
                             <button
-                                class="btn border-[#10B981] text-[#10B981] bg-white hover:bg-[#10B981] mt-5 hover:text-white">Interview</button>
+                                class="btn btn-interview border-[#10B981] text-[#10B981] bg-white hover:bg-[#10B981] mt-5 hover:text-white">Interview</button>
                             <button
-                                class="btn border-[#EF4444] text-[#EF4444] bg-white hover:bg-[#EF4444] mt-5 hover:text-white">Rejected</button>
+                                class="btn btn-rejected border-[#EF4444] text-[#EF4444] bg-white hover:bg-[#EF4444] mt-5 hover:text-white">Rejected</button>
                         </div>
                     </div>
                 </div>
-                <div class="card bg-white p-6">
-                    <div class="left">
-                        <div class="flex justify-between">
-                            <div class="mb-5">
-                                <h1 class="font-semibold text-[18px]">Mobile First Corp</h1>
-                                <p class="text-[#64748B] text-sm">React Native Developer</p>
-                            </div>
-                            <div class="opacity-70 hover:opacity-100"><i class="fa-regular fa-trash-can"></i></div>
-                        </div>
-                        <p class="text-[#64748B] text-sm">Remote
-                            •
-                            Full-time
-                            •
-                            $130,000 - $175,000</p>
-                        <button class="btn mt-5 mb-2 text bg-[#EEF4FF]">Not Applied</button>
-                        <p class="text-sm text-[#323B49]">Build cross-platform mobile applications using React Native.
-                            Work on products used by
-                            millions of users worldwide.</p>
-                        <div>
-                            <button
-                                class="btn border-[#10B981] text-[#10B981] bg-white hover:bg-[#10B981] mt-5 hover:text-white">Interview</button>
-                            <button
-                                class="btn border-[#EF4444] text-[#EF4444] bg-white hover:bg-[#EF4444] mt-5 hover:text-white">Rejected</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-white p-6">
-                    <div class="left">
-                        <div class="flex justify-between">
-                            <div class="mb-5">
-                                <h1 class="font-semibold text-[18px]">Mobile First Corp</h1>
-                                <p class="text-[#64748B] text-sm">React Native Developer</p>
-                            </div>
-                            <div class="opacity-70 hover:opacity-100"><i class="fa-regular fa-trash-can"></i></div>
-                        </div>
-                        <p class="text-[#64748B] text-sm">Remote
-                            •
-                            Full-time
-                            •
-                            $130,000 - $175,000</p>
-                        <button class="btn mt-5 mb-2 text bg-[#EEF4FF]">Not Applied</button>
-                        <p class="text-sm text-[#323B49]">Build cross-platform mobile applications using React Native.
-                            Work on products used by
-                            millions of users worldwide.</p>
-                        <div>
-                            <button
-                                class="btn border-[#10B981] text-[#10B981] bg-white hover:bg-[#10B981] mt-5 hover:text-white">Interview</button>
-                            <button
-                                class="btn border-[#EF4444] text-[#EF4444] bg-white hover:bg-[#EF4444] mt-5 hover:text-white">Rejected</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-white p-6">
-                    <div class="left">
-                        <div class="flex justify-between">
-                            <div class="mb-5">
-                                <h1 class="font-semibold text-[18px]">WebFlow Agency</h1>
-                                <p class="text-[#64748B] text-sm">Web Designer & Developer</p>
-                            </div>
-                            <div class="opacity-70 hover:opacity-100"><i class="fa-regular fa-trash-can"></i></div>
-                        </div>
-                        <p class="text-[#64748B] text-sm">Los Angeles, CA
-                            •
-                            Part-time
-                            •
-                            $80,000 - $120,000</p>
-                        <button class="btn mt-5 mb-2 text bg-[#EEF4FF]">Not Applied</button>
-                        <p class="text-sm text-[#323B49]">Create stunning web experiences for high-profile clients. Must
-                            have portfolio and experience with modern web design trends.</p>
-                        <div>
-                            <button
-                                class="btn border-[#10B981] text-[#10B981] bg-white hover:bg-[#10B981] mt-5 hover:text-white">Interview</button>
-                            <button
-                                class="btn border-[#EF4444] text-[#EF4444] bg-white hover:bg-[#EF4444] mt-5 hover:text-white">Rejected</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-white p-6">
-                    <div class="left">
-                        <div class="flex justify-between">
-                            <div class="mb-5">
-                                <h1 class="font-semibold text-[18px]">DataViz Solutions</h1>
-                                <p class="text-[#64748B] text-sm">Data Visualization Specialist</p>
-                            </div>
-                            <div class="opacity-70 hover:opacity-100"><i class="fa-regular fa-trash-can"></i></div>
-                        </div>
-                        <p class="text-[#64748B] text-sm">Boston, MA
-                            •
-                            Full-time
-                            •
-                            $125,000 - $165,000</p>
-                        <button class="btn mt-5 mb-2 text bg-[#EEF4FF]">Not Applied</button>
-                        <p class="text-sm text-[#323B49]">Transform complex data into compelling visualizations.
-                            Required skills: D3.js, React, and strong analytical thinking.
-                        </p>
-                        <div>
-                            <button
-                                class="btn border-[#10B981] text-[#10B981] bg-white hover:bg-[#10B981] mt-5 hover:text-white">Interview</button>
-                            <button
-                                class="btn border-[#EF4444] text-[#EF4444] bg-white hover:bg-[#EF4444] mt-5 hover:text-white">Rejected</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-white p-6">
-                    <div class="left">
-                        <div class="flex justify-between">
-                            <div class="mb-5">
-                                <h1 class="font-semibold text-[18px]">Mobile First Corp</h1>
-                                <p class="text-[#64748B] text-sm">React Native Developer</p>
-                            </div>
-                            <div class="opacity-70 hover:opacity-100"><i class="fa-regular fa-trash-can"></i></div>
-                        </div>
-                        <p class="text-[#64748B] text-sm">Remote
-                            •
-                            Full-time
-                            •
-                            $130,000 - $175,000</p>
-                        <button class="btn mt-5 mb-2 text bg-[#EEF4FF]">Not Applied</button>
-                        <p class="text-sm text-[#323B49]">Build cross-platform mobile applications using React Native.
-                            Work on products used by
-                            millions of users worldwide.</p>
-                        <div>
-                            <button
-                                class="btn border-[#10B981] text-[#10B981] bg-white hover:bg-[#10B981] mt-5 hover:text-white">Interview</button>
-                            <button
-                                class="btn border-[#EF4444] text-[#EF4444] bg-white hover:bg-[#EF4444] mt-5 hover:text-white">Rejected</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-white p-6">
-                    <div class="left">
-                        <div class="flex justify-between">
-                            <div class="mb-5">
-                                <h1 class="font-semibold text-[18px]">Mobile First Corp</h1>
-                                <p class="text-[#64748B] text-sm">React Native Developer</p>
-                            </div>
-                            <div class="opacity-70 hover:opacity-100"><i class="fa-regular fa-trash-can"></i></div>
-                        </div>
-                        <p class="text-[#64748B] text-sm">Remote
-                            •
-                            Full-time
-                            •
-                            $130,000 - $175,000</p>
-                        <button class="btn mt-5 mb-2 text bg-[#EEF4FF]">Not Applied</button>
-                        <p class="text-sm text-[#323B49]">Build cross-platform mobile applications using React Native.
-                            Work on products used by
-                            millions of users worldwide.</p>
-                        <div>
-                            <button
-                                class="btn border-[#10B981] text-[#10B981] bg-white hover:bg-[#10B981] mt-5 hover:text-white">Interview</button>
-                            <button
-                                class="btn border-[#EF4444] text-[#EF4444] bg-white hover:bg-[#EF4444] mt-5 hover:text-white">Rejected</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card bg-white p-6 mb-16">
-                    <div class="left">
-                        <div class="flex justify-between">
-                            <div class="mb-5">
-                                <h1 class="font-semibold text-[18px]">Mobile First Corp</h1>
-                                <p class="text-[#64748B] text-sm">React Native Developer</p>
-                            </div>
-                            <div class="opacity-70 hover:opacity-100"><i class="fa-regular fa-trash-can"></i></div>
-                        </div>
-                        <p class="text-[#64748B] text-sm">Remote
-                            •
-                            Full-time
-                            •
-                            $130,000 - $175,000</p>
-                        <button class="btn mt-5 mb-2 text bg-[#EEF4FF]">Not Applied</button>
-                        <p class="text-sm text-[#323B49]">Build cross-platform mobile applications using React Native.
-                            Work on products used by
-                            millions of users worldwide.</p>
-                        <div>
-                            <button
-                                class="btn border-[#10B981] text-[#10B981] bg-white hover:bg-[#10B981] mt-5 hover:text-white">Interview</button>
-                            <button
-                                class="btn border-[#EF4444] text-[#EF4444] bg-white hover:bg-[#EF4444] mt-5 hover:text-white">Rejected</button>
-                        </div>
-                    </div>
-                </div>
+                
             </section>
 
         </main>
