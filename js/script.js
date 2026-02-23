@@ -8,7 +8,9 @@ let interviewCount = document.getElementById("interview-count");
 let rejectedCount = document.getElementById("rejected-count");
 let totalJobs = document.getElementById("total-jobs");
 let totalJobsHead = document.getElementById("total-jobs-head");
-console.log(totalJobsHead.innerText);
+let noJobPage = document.getElementById("no-job-page");
+// console.log(noJobPage);
+// console.log(totalJobsHead.innerText);
 
 allCards = document.getElementById('cards');
 total = document.getElementById('cards').children.length;
@@ -40,6 +42,7 @@ const interviewFilterBtn = document.getElementById("interview-filter-btn");
 const rejectedFilterBtn = document.getElementById("rejected-filter-btn");
 
 
+
 function btnController(id) {
 
     // console.log(id);  
@@ -60,6 +63,7 @@ function btnController(id) {
     } else if (id == 'all-filter-btn') {
         allCards.classList.remove("hidden");
         filteredSection.classList.add("hidden");
+        noJobPage.classList.add("hidden");
         totalJobsHead.innerText = `${total} jobs`;
         updateTotalJobs();
     } else if (id == 'rejected-filter-btn') {
@@ -74,17 +78,22 @@ function btnController(id) {
 
 const mainContainer = document.getElementById("main-container");
 
-mainContainer.addEventListener('click', function (event) {
-    // delete button a click korle oi card ta remove hoye jabe
 
+// delete korar jonno jdi dustbin a click kora hoy  
+
+mainContainer.addEventListener('click', function (event) {
     if (event.target.classList.contains("btn-delete")) {
         const card = event.target.parentNode.parentNode.parentNode.parentNode;
-        // console.log(card);
         card.remove();
         
         updateTotalJobs();
         calculateCounts();
-
+        
+        // Show noJobPage if all andu shandu pandu are deleted
+        if (document.querySelectorAll("#cards .card").length === 0) {
+            noJobPage.classList.remove("hidden");
+            allCards.classList.add("hidden");
+        }
     }
 });
 
@@ -117,6 +126,7 @@ mainContainer.addEventListener('click', function (event) {
         parentNode.querySelector(".apply-verification-button").classList.remove("bg-[#EEF4FF]");
         parentNode.querySelector(".apply-verification-button").classList.add("border-[#10B981]", "text-[#10B981]", "bg-white","size-min");
         updateAllSectionStatus(companyName, "Interview");
+        
 
         // console.log(companyName,position,description,salary);
 
@@ -164,6 +174,7 @@ mainContainer.addEventListener('click', function (event) {
         parentNode.querySelector(".apply-verification-button").classList.remove("bg-[#EEF4FF]");    
         parentNode.querySelector(".apply-verification-button").classList.add("border-[#EF4444]", "text-[#EF4444]", "bg-white","size-min"); 
         updateAllSectionStatus(companyName, "Rejected");
+        
 
         // console.log(companyName,position,description,salary);
 
@@ -218,6 +229,13 @@ const filteredSection = document.getElementById("filtered-section");
 function renderInterviewCards() {
     filteredSection.innerHTML = "";
 
+    if (interviewArr.length === 0) {
+        noJobPage.classList.remove("hidden");
+        return;
+    }
+
+    noJobPage.classList.add("hidden");
+
     for (let i of interviewArr) {
         console.log(i);
         let div = document.createElement("div");
@@ -243,8 +261,16 @@ function renderInterviewCards() {
         filteredSection.appendChild(div);
     }
 }
+
 function renderRejectedCards() {
     filteredSection.innerHTML = "";
+
+    if (rejectedArr.length === 0) {
+        noJobPage.classList.remove("hidden");
+        return;
+    }
+
+    noJobPage.classList.add("hidden");
 
     for (let i of rejectedArr) {
         console.log(i);
